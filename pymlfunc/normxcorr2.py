@@ -13,7 +13,7 @@ def shift_data(arr):
 def normxcorr2(template, image):
     """
     Computes the normalised cross-correlation of matrices template and image.
-    The matrix image must be larger than the matrix template, otherwise they will be swapped
+    The matrix image must be larger than the matrix template
     The resulting matrix contains correlation coefficients and its values may range from -1.0 to 1.0.
 
     :param template: the smaller matrix to be cross-correlated with the image.
@@ -22,10 +22,7 @@ def normxcorr2(template, image):
     """
     if np.ndim(template) > np.ndim(image) or \
             len([i for i in range(np.ndim(template)) if template.shape[i] > image.shape[i]]) > 0:
-        print("Template larger than image. Arguments are swapped.")
-        temp = image
-        image = template
-        template = temp
+        raise ValueError("Template larger than image. Arguments are swapped.")
 
     template = shift_data(template)
     image = shift_data(image)
