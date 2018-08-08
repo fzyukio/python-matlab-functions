@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="pymlfunc",
-    version="0.0.1",
+    version="0.0.2",
     author="Yukio Fukuzawa",
     author_email="y.fukuzawa@massey.ac.nz",
     description="Implementation of some useful Matlab functions that are missing from numpy/scipy",
